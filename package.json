@@ -1,0 +1,26 @@
+{
+  "name": "iclick",
+  "version": "1.0.0",
+  "description": "iClick Automation NodeJS Package.",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Undefined-Token/iclick-nodejs.git"
+  },
+  "keywords": [
+    "IOS",
+    "Automation"
+  ],
+  "author": "iClick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Undefined-Token/iclick-nodejs/issues"
+  },
+  "homepage": "https://github.com/Undefined-Token/iclick-nodejs#readme",
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}
