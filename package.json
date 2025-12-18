@@ -1,11 +1,8 @@
 {
-  "name": "iclick",
+  "name": "@undefined-token/iclick",
   "version": "1.0.0",
   "description": "iClick Automation NodeJS Package.",
   "main": "main.js",
-  "scripts": {
-    "test": "node test.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Undefined-Token/iclick-nodejs.git"
