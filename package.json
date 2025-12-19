@@ -1,5 +1,5 @@
 {
-  "name": "@undefined-token/iclick",
+  "name": "@phomatrix/iclick",
   "version": "1.0.0",
   "description": "iClick Automation NodeJS Package.",
   "main": "main.js",
