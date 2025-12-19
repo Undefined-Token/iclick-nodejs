@@ -4,7 +4,7 @@ async function test() {
     console.log('开始测试连接...')
     
     // 创建客户端实例，连接到 192.168.31.15
-    const client = iclick({
+    const client = new iclick({
         host: '192.168.31.15',
         port: 23188
     })
