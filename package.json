@@ -1,7 +1,7 @@
 {
   "name": "iclick-auto",
-  "version": "1.0.1",
-  "description": "iClick Automation NodeJS Package.",
+  "version": "1.0.2",
+  "description": "iClick Automation Tool Without Jailbreak NodeJS Package.",
   "main": "main.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,8 @@
   },
   "keywords": [
     "IOS",
-    "Automation"
+    "Automation",
+    "Without Jailbreak"
   ],
   "author": "iClick",
   "license": "ISC",
