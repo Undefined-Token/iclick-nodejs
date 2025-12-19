@@ -5,7 +5,7 @@
 
 English | [中文](README.md)
 
-Node.js SDK for iOS automation without jailbreak. In addition to API calls, it also implements automatic reconnection and event listening mechanisms.
+Node.js SDK for iOS automation without jailbreak. In addition to API calls, it implements automatic reconnection, event listening mechanisms, and binary meta data packet parsing.
 
 Official Website: https://iosclick.com/
 
