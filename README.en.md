@@ -3,6 +3,8 @@
 ![npm version](https://img.shields.io/npm/v/iclick-auto.svg)
 ![npm license](https://img.shields.io/npm/l/iclick-auto.svg)
 
+English | [中文](README.md)
+
 Node.js SDK for iOS automation without jailbreak. In addition to API calls, it also implements automatic reconnection and event listening mechanisms.
 
 Official Website: https://iosclick.com/

@@ -3,6 +3,8 @@
 ![npm version](https://img.shields.io/npm/v/iclick-auto.svg)
 ![npm license](https://img.shields.io/npm/l/iclick-auto.svg)
 
+[English](README.en.md) | 中文
+
 用于iOS免越狱自动化的 Node.js SDK。除了 API 调用功能外，还实现了断线重连和事件监听机制。
 
 官方网站: https://iosclick.com/
