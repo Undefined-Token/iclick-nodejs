@@ -1,5 +1,5 @@
 const WebSocket = require('ws')
-const { websocket_host, websocket_port, reconnect_delay } = require('./utils')
+const { websocket_host, websocket_port, reconnect_delay, max_reconnect_attempts } = require('./utils')
 const createEventEmitter = require('./event')
 
 function createClient(options = {}) {
@@ -9,10 +9,12 @@ function createClient(options = {}) {
     let wsclient = null
     let reconnectTimer = null
     let closed = false
+    let reconnectAttempts = 0
     const host = options.host || websocket_host
     const port = options.port || websocket_port
     const autoReconnect = options.autoReconnect !== false  // 默认启用自动重连
     const reconnectDelay = options.reconnectDelay || reconnect_delay  // 默认重连延迟（秒）
+    const maxAttempts = options.maxReconnectAttempts || max_reconnect_attempts  // 最大重连重试次数
 
     function reconnect() {
         if( closed || !autoReconnect ){
@@ -21,6 +23,11 @@ function createClient(options = {}) {
         if( reconnectTimer || (wsclient && wsclient.readyState === WebSocket.CONNECTING) ){
             return
         }
+        if( reconnectAttempts >= maxAttempts ){
+            console.error(`[iClick] Max reconnect attempts (${maxAttempts}) reached. Stopping reconnection.`)
+            return
+        }
+        reconnectAttempts++
         reconnectTimer = setTimeout(() => {
             connectServer().finally(() => reconnectTimer = null)
         }, reconnectDelay * 1000)
@@ -36,6 +43,7 @@ function createClient(options = {}) {
             wsclient = new WebSocket(`ws://${host}:${port}`)
 
             wsclient.on('open', () => {
+                reconnectAttempts = 0  // 连接成功后重置重连计数
                 _resolve()
             })
 
@@ -65,7 +73,7 @@ function createClient(options = {}) {
                         _bindata = null
                     }
                 } catch (_error) {
-                    console.error('receive message error:', _error.message)
+                    console.error('[iClick] receive message error:', _error.message)
                     return _reject(_error)
                 }
                 
